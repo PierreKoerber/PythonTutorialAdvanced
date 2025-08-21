@@ -2,6 +2,12 @@ Yes ! On peut faire les deux : **un exécutable (.exe)** et **une petite interfa
 
 ---
 
+2033 source .venv/bin/activate
+2034 pip install pyinstaller
+2035 history
+
+---
+
 # 1) Créer un .exe (packager votre script)
 
 ## Avec PyInstaller (Windows/Mac/Linux)
@@ -53,6 +59,25 @@ Dans `dist/` : `dist/gui_explorer.exe` (Windows) ou `dist/gui_explorer` (Linux/m
 ---
 
 # 2) Mini-application **fenêtrée** (Tkinter)
+
+Normal — `tkinter` n’est **pas un package PyPI** que tu peux installer avec `pip`. C’est une **librairie standard de Python**, mais elle doit être compilée/packagée avec ton installation Python.
+
+Sur ta Linux Mint, il faut installer les dépendances système qui fournissent Tk, puis refaire ton venv si nécessaire :
+
+```bash
+sudo apt update
+sudo apt install python3-tk
+```
+
+Ensuite, dans ton venv, tu n’as rien de plus à installer avec `pip`. Tu peux tester que ça marche :
+
+```bash
+python -m tkinter
+```
+
+Ça doit ouvrir une petite fenêtre « Tk ».
+
+👉 Si tu avais créé ton `.venv` avant d’installer `python3-tk`, il est possible qu’il faille recréer ton venv pour qu’il voie la lib Tk.
 
 Voici une **UI simple** qui :
 
