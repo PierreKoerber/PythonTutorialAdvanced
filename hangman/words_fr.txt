@@ -1,0 +1,1 @@
+"ordinateur","python","programmation","algorithme","variable","fonction","bibliotheque","internet","serveur","client","navigateurs","base","donnees","logiciel","materiel","reseau","application","terminal","compilation","virtualisation"
