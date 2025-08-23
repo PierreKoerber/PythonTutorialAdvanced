@@ -1,8 +1,3 @@
-Super 👍 tu veux donc un **plan détaillé** pour une séance type **S1 — Types & opérations de base** (après les 10 jours, quand tu reprends plus lentement).
-Je te propose un **cours structuré** avec théorie + exemples + exercices + fil rouge.
-
----
-
 # 📘 Cours S1 — Types & opérations de base (révision approfondie)
 
 ---

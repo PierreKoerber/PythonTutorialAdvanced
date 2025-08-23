@@ -2,6 +2,11 @@
 import random
 
 
+import os
+
+def clear():
+    os.system("cls" if os.name == "nt" else "clear")
+
 def getRandomWord():
     words = ["ordinateur","python","programmation","algorithme","variable","fonction","bibliotheque","internet","serveur","client","navigateurs","base","donnees","logiciel","materiel","reseau","application","terminal","compilation","virtualisation"]
     i = random.randint(0, len(words))
@@ -24,6 +29,7 @@ def hangman():
     lettres_demandees = []
 
     while(nombre_essai > nombre_tentives):
+        #clear() 
         lettre = input("Votre lettre ?")
         # Test si lettre est correct
         # Test si 1 seule lettre
@@ -33,7 +39,7 @@ def hangman():
         resultat = lettres_trouvee_dans_mot(word, lettres_demandees)
         print(resultat)
         print("il reste " +str(nombre_essai - nombre_tentives) )
-        
+
         nombre_tentives = nombre_tentives + 1
 
     print("fin de la partie")
