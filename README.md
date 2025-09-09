@@ -15,7 +15,7 @@ Livrable final : un script `data_explorer.py` + un dossier `samples/` et un `REA
 
 # 🗓️ Plan sur 8 semaines
 
-## S1 — Types & opérations de base (révision profonde) : (./day01/day01.md)
+## [S1 — Types & opérations de base (révision profonde) : ](./day01/day01.md)
 
 - **Objets fondamentaux** : `str`, `list`, `dict`, `set`, `tuple`
 - Méthodes clés (strings, listes), slicing, `sorted()`, `key=`, `reverse=`
@@ -27,14 +27,14 @@ Livrable final : un script `data_explorer.py` + un dossier `samples/` et un `REA
   print(sorted(files, key=lambda x: x["size"], reverse=True))
   ```
 
-## S2 — Fichiers & chemins (stdlib)
+## [S2 — Fichiers & chemins (stdlib)](./day02/day02.md)
 
 - `pathlib` (recommandé) vs `os.path`; encodage `utf-8`
 - Lister, **récursion** : `Path.rglob("**/*")`
 - Métadonnées : `.stat().st_size`, `.suffix`, `.stem`, `datetime.fromtimestamp`
 - **Fil rouge** : fonction `scan_dir(path)->list[dict]` (name, size, ext, mtime).
 
-## S3 — Tri, filtres, recherche
+## [S3 — Tri, filtres, recherche](./day03/day03.md)
 
 - `glob` (motifs), `re` (regex, `re.search`)
 - Filtres composés (extension, taille min/max, date après)

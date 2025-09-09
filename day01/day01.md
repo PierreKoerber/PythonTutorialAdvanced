@@ -51,6 +51,75 @@
 - Opérations ensemblistes : `|` union, `&` intersection, `-` différence
 - Vérifier appartenance : `x in mon_set`
 
+Un **set** en Python, c’est une **collection non ordonnée et sans doublons**.
+Imagine une boîte où tu jettes des objets : si tu jettes deux fois le même, il n’y en aura qu’un seul dedans.
+
+---
+
+#### Propriétés d’un set :
+
+- **Pas de doublons** → utile pour dédupliquer rapidement.
+- **Non ordonné** → pas d’index comme dans une liste.
+- **Opérations ensemblistes rapides** → union, intersection, différence.
+
+---
+
+#### Exemple basique
+
+```python
+fruits = {"pomme", "banane", "pomme", "orange"}
+print(fruits)
+```
+
+➡️ Résultat (pas de doublon) :
+
+```
+{'orange', 'banane', 'pomme'}
+```
+
+---
+
+#### Ajouter / retirer
+
+```python
+fruits.add("kiwi")
+fruits.remove("banane")
+print(fruits)
+```
+
+---
+
+#### Opérations d’ensembles
+
+```python
+a = {1, 2, 3, 4}
+b = {3, 4, 5, 6}
+
+print(a | b)   # union → {1, 2, 3, 4, 5, 6}
+print(a & b)   # intersection → {3, 4}
+print(a - b)   # différence → {1, 2}
+print(a ^ b)   # symétrique (dans un seul des deux) → {1, 2, 5, 6}
+```
+
+---
+
+#### Cas pratiques :
+
+- Supprimer les doublons d’une liste :
+
+  ```python
+  nums = [1, 2, 2, 3, 4, 4, 5]
+  unique = set(nums)
+  print(unique)  # {1, 2, 3, 4, 5}
+  ```
+
+- Vérifier rapidement si un élément est présent (plus rapide qu’une liste).
+- Comparer des groupes de valeurs.
+
+---
+
+Tu veux que je te montre un exemple **réel et utile** genre « comment enlever les doublons d’une liste de mails et trouver ceux qu’ils ont en commun entre deux listes » ?
+
 ---
 
 ## 3) Slicing (listes et chaînes)
