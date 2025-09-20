@@ -140,7 +140,3 @@ for f in filtres:
 - **Regex** : recherche avancée dans les noms de fichiers.
 - **Tri** : `sorted()` avec `key` + `reverse`.
 - **Fil rouge** : on a maintenant un **explorateur de fichiers** capable de scanner, filtrer, et trier → base d’un vrai outil d’indexation.
-
----
-
-👉 Veux-tu que je te prépare un **jeu de données (arborescence fictive avec quelques fichiers)** pour que ton fils puisse tester `scan_dir()` + filtres/tri sans utiliser son disque perso ?
