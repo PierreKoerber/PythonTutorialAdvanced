@@ -4,6 +4,35 @@ import re
 import re, fnmatch
 
 import datetime
+import json
+import csv
+
+def readcsv_file(file):
+    rows = []
+    with open(file, "r", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            rows.append(row)
+        return rows
+
+def writecsv_file(file, rows):
+    with open(file, "w", newline="", encoding="utf-8") as f:
+        cles = rows[0].keys() 
+        writer = csv.DictWriter(f, fieldnames=cles)
+        writer.writeheader()
+        writer.writerows(rows)
+
+
+
+def readjson_file(file):
+    with open(file, "r", encoding="utf-8") as f:
+        d = json.load(f)
+        return d 
+
+def writejson_file(file, row):
+    with open(file, "w", encoding="utf-8") as f:
+        json.dump(row, f, indent=2, ensure_ascii=False)
+   
 
 def writefile(filname, txt):
     f = open(filename, "w", encoding="UTF8")
@@ -51,19 +80,12 @@ def filter_files_by_pattern(files, pattern):
         if pat.search(str(f)):
             newlist.append(f)
     return newlist
- 
-def filter_files_by_size(listefichier, operator, sizeoctet):
+
+def filter_files_by_size(listefichier, sizeoctet):
     newlist = []
     for f in listefichier:
-        if operator == ">":
-            if f.stat().st_size > sizeoctet:
-                newlist.append(f)
-        if operator == "<":
-            if f.stat().st_size < sizeoctet:
-                newlist.append(f)  
-        if operator == "==":
-            if f.stat().st_size == sizeoctet:
-                newlist.append(f)  
+        if f.stat().st_size > sizeoctet:
+            newlist.append(f)
     return newlist
 
 def sort_by_date(listefile):
@@ -78,6 +100,34 @@ def printListFile(liste,title=""):
     for f in liste:
         print(f"Fichier : {f} - size={f.stat().st_size} - {format_mtime(f.stat().st_mtime)}" )
 
+def printMyFile(listeObject):
+    print("--------------------")
+    for mf in listeObject:
+        print(f" {mf["name"]}")
+
 def format_mtime(timestamp):
     return datetime.datetime.fromtimestamp(timestamp)
     
+
+def convert_files(liste):
+    return [convert_file(f) for f in liste ]
+
+def convert_file(f):
+    o = {
+        "fullname": str(f),
+        "name": str(f.name),
+        "size": f.stat().st_size,
+        "mtime": f.stat().st_mtime,
+        "date": format_mtime(f.stat().st_mtime  ).isoformat(),
+        "ext": f.suffix
+    }
+    o["key"] = (o["name"], o["size"], o["mtime"])
+    return o
+
+def convert_path_to_filename(sdir, sext):
+    return sdir.replace("/", "_") + sext
+
+
+def print_with_label(label, x):
+    print("-----------------------")
+    print(label, x)

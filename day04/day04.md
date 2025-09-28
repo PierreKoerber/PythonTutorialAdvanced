@@ -177,7 +177,3 @@ export_csv(loaded, "index.csv")
 - Tu sais maintenant **sauvegarder et recharger** ton index.
 - Tu as appris à **fusionner** deux index.
 - Le fil rouge devient **persistant** : il garde les résultats entre deux exécutions.
-
----
-
-👉 Veux-tu que je prépare un **exemple d’index JSON déjà généré à partir du dossier `samples/`** (fichier prêt à utiliser, avec 10–12 fichiers) pour que ton fils puisse tester directement la lecture ?

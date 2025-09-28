@@ -15,7 +15,7 @@ liste = scan_directory("/data/Python_cours02_avance/", "*.md", True)
 
 printListFile(liste)
 
-listfiltree = filter_files_by_size(liste, 2000)
+listfiltree = filter_files_by_size(liste, "<",2000)
 
 
 printListFile(listfiltree)

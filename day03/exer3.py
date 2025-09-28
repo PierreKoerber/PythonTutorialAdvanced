@@ -15,5 +15,4 @@ printListFile(liste)
 
 newlist = filter_files_by_pattern(liste, "day")
 
-
 printListFile(newlist)

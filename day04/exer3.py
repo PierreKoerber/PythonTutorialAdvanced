@@ -4,26 +4,20 @@ from myutils4 import scan_directory
 from myutils4 import printListFile
 from myutils4 import scan_dir2
 from myutils4 import convert_files
-from myutils4 import printMyFile
+from myutils4 import readjson_file
 from myutils4 import writejson_file
 from myutils4 import convert_path_to_filename
 
 sdir = "/data/Python_cours02_avance/"
-spattern = "*.md"
 
-liste = scan_directory("/data/Python_cours02_avance/", "*.txt", True)
-
-printListFile(liste)
-
-
-l = convert_files(liste)
-
-
-
-printMyFile(l)
 
 
 soutput = convert_path_to_filename(sdir,".json")
 
-writejson_file(soutput, l)
+l = readjson_file(soutput)
 
+print(l)
+
+print("nb entrées: " + str(len(l)))
+
+ 
