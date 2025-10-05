@@ -181,6 +181,8 @@ if __name__ == "__main__":
     main()
 ```
 
+- https://jsonplaceholder.typicode.com/posts
+
 ---
 
 ## 7. Exercices
